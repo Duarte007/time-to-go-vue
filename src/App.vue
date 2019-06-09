@@ -1,28 +1,54 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+
+    <header>
+        TimeToGo - {{employee}}
+    </header>
+
+    <Trainee v-if="trainee"/>
+    <Hired v-else/>
+
+    <div class="progress">
+      <Progress/>
+    </div>
+
+    <PrimaryButton :name="actionAdd"/>
+    <PrimaryButton :name="actionCalc"/>
+
+
+    <footer>
+        Developed by: Duarte
+    </footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Trainee from './Trainee.vue';
+import Hired from './Hired.vue';
+import PrimaryButton from './components/PrimaryButton.vue';
+import DefaultButton from './components/DefaultButton.vue';
+import Progress from './components/Progress.vue';
 
 export default {
   name: 'app',
+  data(){
+    return{
+      trainee: false,
+      employee: "CLT",
+      actionCalc: "Calcular",
+      actionAdd: "Adicionar Intervalo"
+    }
+  },
   components: {
-    HelloWorld
+    Hired,
+    Trainee,
+    PrimaryButton,
+    DefaultButton,
+    Progress
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import './assets/css/styles.css';
 </style>
