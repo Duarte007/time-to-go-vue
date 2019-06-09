@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="radio">
         <a-radio-group @change="setVisibility" defaultValue="a" :size="size">
         <a-radio-button value="a">CLT</a-radio-button>
         <a-radio-button value="b">Estágiario</a-radio-button>
@@ -17,7 +17,7 @@ export default {
     }
   },
   props:{
-    name: String,
+    visibility: Boolean,
   },
   methods:{
     setVisibility: function(){

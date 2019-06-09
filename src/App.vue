@@ -5,20 +5,25 @@
         TimeToGo - {{employee}}
     </header>
 
-    <!-- <Radio/> -->
+    <div class="content">
 
-    <Trainee v-if="trainee"/>
-    <Hired v-else/>
+      <Radio/>
 
-    <div class="progress">
-      <Progress/>
+      <Trainee v-if="trainee"/>
+      <Hired v-else/>
+
+      <div class="progress">
+        <Progress/>
+      </div>
+
+      <div id="button">
+        <!-- <BackButton :name="actionBack"/> -->
+        <PrimaryButton :name="actionAdd" :icon="'plus'"/>
+        <PrimaryButton :name="actionCalc"/>
+      </div>
+      
     </div>
 
-    <div id="button">
-      <BackButton :name="actionBack"/>
-      <PrimaryButton :name="actionAdd"/>
-      <PrimaryButton :name="actionCalc"/>
-    </div>
 
 
     <footer>
@@ -43,7 +48,7 @@ export default {
       employee: "CLT",
       actionBack: "Voltar",
       actionCalc: "Calcular",
-      actionAdd: "Adicionar Intervalo"
+      actionAdd: "Adc. Intervalo"
     }
   },
   components: {
@@ -53,6 +58,11 @@ export default {
     PrimaryButton,
     BackButton,
     Progress
+  },
+  methods:{
+    consoleL: function(){
+      console.log('entrei');
+    }
   }
 }
 </script>

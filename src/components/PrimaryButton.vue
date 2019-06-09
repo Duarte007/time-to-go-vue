@@ -1,5 +1,5 @@
 <template>
-    <a-button class="btn" type="primary" :size="size">{{name}}</a-button>
+    <a-button class="btn" type="primary" :size="size" :icon="icon" >{{name}}</a-button>
 </template>
 
 <script>
@@ -13,6 +13,7 @@ export default {
   },
   props:{
     name: String,
+    icon: String
   }
 }
 </script>
