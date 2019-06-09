@@ -1,5 +1,9 @@
 <template>
-    <a-button class="btn" type="primary" :size="size">{{name}}</a-button>
+  <a-button-group :size="size">
+      <a-button class="btn back" type="primary">
+        <a-icon type="left" />{{name}}
+      </a-button>
+    </a-button-group>
 </template>
 
 <script>

@@ -5,6 +5,8 @@
         TimeToGo - {{employee}}
     </header>
 
+    <!-- <Radio/> -->
+
     <Trainee v-if="trainee"/>
     <Hired v-else/>
 
@@ -12,8 +14,11 @@
       <Progress/>
     </div>
 
-    <PrimaryButton :name="actionAdd"/>
-    <PrimaryButton :name="actionCalc"/>
+    <div id="button">
+      <BackButton :name="actionBack"/>
+      <PrimaryButton :name="actionAdd"/>
+      <PrimaryButton :name="actionCalc"/>
+    </div>
 
 
     <footer>
@@ -23,10 +28,11 @@
 </template>
 
 <script>
+import Radio from './components/Radio.vue';
 import Trainee from './Trainee.vue';
 import Hired from './Hired.vue';
 import PrimaryButton from './components/PrimaryButton.vue';
-import DefaultButton from './components/DefaultButton.vue';
+import BackButton from './components/BackButton.vue';
 import Progress from './components/Progress.vue';
 
 export default {
@@ -35,15 +41,17 @@ export default {
     return{
       trainee: false,
       employee: "CLT",
+      actionBack: "Voltar",
       actionCalc: "Calcular",
       actionAdd: "Adicionar Intervalo"
     }
   },
   components: {
+    Radio,
     Hired,
     Trainee,
     PrimaryButton,
-    DefaultButton,
+    BackButton,
     Progress
   }
 }
